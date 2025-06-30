@@ -2,11 +2,11 @@ from os import path, listdir
 
 def get_files_info(working_directory, directory=None):
     working_path = path.abspath(working_directory)
-    directory_path = path.abspath(path.join(working_directory, directory))
+    directory_path = path.abspath(path.join(working_directory, file_path))
     if not path.isdir(directory_path):
-        return f'Error: "{directory}" is not a directory\n'
+        return f'Error: "{directory}" is not a directory'
     if not directory_path.startswith(working_path):
-        return f'Error: Cannot list "{directory}" as it is outside the permitted working directory\n'
+        return f'Error: Cannot list "{directory}" as it is outside the permitted working directory'
     directory_content = listdir(directory_path)
     content_string = ''
     try:
