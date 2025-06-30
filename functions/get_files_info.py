@@ -2,7 +2,7 @@ from os import path, listdir
 
 def get_files_info(working_directory, directory=None):
     working_path = path.abspath(working_directory)
-    directory_path = path.abspath(path.join(working_directory, file_path))
+    directory_path = path.abspath(path.join(working_directory, directory))
     if not path.isdir(directory_path):
         return f'Error: "{directory}" is not a directory'
     if not directory_path.startswith(working_path):

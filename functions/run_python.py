@@ -12,7 +12,7 @@ def run_python_file(working_directory, file_path):
     if not file_path[-3:] == '.py':
         return f'Error: "{file_path}" is not a Python file.'
     try:
-        result = subprocess.run(['python', full_file_path], timeout=30, capture_output=True, cwd=working_path)
+        result = subprocess.run(['python', full_file_path], timeout=30, capture_output=True, cwd=working_path, text=True)
     except Exception as e:
         return f"Error: executing Python file: {e}"
     return_string = f'STDOUT: {result.stdout}\n'
